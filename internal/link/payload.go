@@ -1,0 +1,15 @@
+package link
+
+type LinkCreateRequest struct {
+	Url string `json:"url" validate:"required,url"`
+}
+
+type LinkUpdateRequest struct {
+	LinkCreateRequest
+	Hash string `json:"hash"`
+}
+
+type GetLinksListResponse struct {
+	Links []Link `json:"links"`
+	Count int64  `json:"Count"`
+}
